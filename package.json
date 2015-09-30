@@ -1,0 +1,29 @@
+{
+  "name": "login-boilerplate",
+  "version": "1.0.0",
+  "description": "Login Boilerplate written in Node and Mongo",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RonakR/LoginBoilerplate.git"
+  },
+  "keywords": [
+    "node",
+    "mongo",
+    "login",
+    "boilerplate",
+    "es6"
+  ],
+  "author": "Ronak Raithatha <ronaksraithatha@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RonakR/LoginBoilerplate/issues"
+  },
+  "homepage": "https://github.com/RonakR/LoginBoilerplate#readme",
+  "devDependencies": {
+    "mongoose": "^4.1.9"
+  }
+}
