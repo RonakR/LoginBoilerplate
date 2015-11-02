@@ -24,7 +24,7 @@ var User = mongoose.model('User', userSchema);
 module.exports = {
     //Create user based on userInfo
     createUser: function(userInfo){
-        var create = new Promise(function(resolve, reject){
+        return new Promise(function(resolve, reject){
             run(function *(){
                 try {
                     if (typeof userInfo === "undefined" && userInfo === null) throw "Object undefined or empty";
@@ -38,15 +38,11 @@ module.exports = {
                     resolve (user);
                 }
                 catch (e) {
+                    console.log("err: ", err);
                     reject (e);
                 }
 
             });
-        });
-        create.then(function(user){
-            return user;
-        }).catch(function(err){
-            console.log("err: ", err);
         });
     }
 };
