@@ -11,7 +11,7 @@ describe('login-boilerplate', function() {
         expect(true).to.be.true;
     });
     it('should create user', function(done) {
-        var user = loginBoilerplate.create(userInfo, done());
+        var user = loginBoilerplate.createUser(userInfo, done());
         console.log(user);
     });
 });

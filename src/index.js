@@ -1,5 +1,5 @@
 //Require dependencies
-import * as run from 'co';
+import {co as run} from "co";
 import mongoose from "mongoose";
 mongoose.connect('mongodb://localhost/login-boilerplate');
 
@@ -23,9 +23,9 @@ var User = mongoose.model('User', userSchema);
 
 module.exports = {
     //Create user based on userInfo
-    create: function (userInfo) {
-        new Promise(function(resolve, reject){
-            run(function*(){
+    createUser: function(userInfo){
+        var create = new Promise(function(resolve, reject){
+            run(function *(){
                 try {
                     if (typeof userInfo === "undefined" && userInfo === null) throw "Object undefined or empty";
                     if (typeof userInfo.username === "undefined" && userInfo.username === null) throw "username undefined or empty";
@@ -34,18 +34,20 @@ module.exports = {
 
                     var user = (yield new User(userInfo).save(function(err, user){
                         if (err) throw err;
-                        console.log(user);
-                        return user;
                     }));
-                    console.log(user);
-                    return resolve (user);
+                    resolve (user);
                 }
                 catch (e) {
-                    console.log(e);
-                    return reject (e);
+                    reject (e);
                 }
 
             });
         });
+        create.then(function(user){
+            return user;
+        }).catch(function(err){
+            console.log("err: ", err);
+        });
     }
 };
+
