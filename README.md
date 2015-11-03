@@ -18,7 +18,7 @@ var user = loginBoilerplate.create(userInfo).then(function (){
                 return user;
             }).catch(function(err) {
                 console.log(err);
-            })
+            });
 ```
 
 
