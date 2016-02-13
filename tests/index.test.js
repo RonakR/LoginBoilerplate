@@ -1,5 +1,5 @@
 var expect = require('chai').expect;
-var loginBoilerplate = require('./index');
+var loginBoilerplate = require('./../src/index');
 var userInfo = {
     "username": "Test",
     "email": "test@gmail.com",
